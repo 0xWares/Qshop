@@ -5,6 +5,7 @@ import 'package:qshop/screens/profile_screen.dart';
 import 'package:qshop/screens/search_screen.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 import 'package:iconly/iconly.dart';
+import 'package:badges/badges.dart' as badges;
 
 class Rootscreen extends StatefulWidget {
   const Rootscreen({super.key});
@@ -54,7 +55,10 @@ class _RootscreenState extends State<Rootscreen> {
             selectedColor: const Color.fromARGB(255, 255, 100, 234),
           ),
           SalomonBottomBarItem(
-            icon: Icon(IconlyBroken.bag, color: Colors.white70),
+            icon: badges.Badge(
+              badgeContent: Text('3'),
+              child: Icon(IconlyBroken.bag, color: Colors.white70),
+            ),
             title: Text("Cart"),
             selectedColor: const Color.fromARGB(255, 252, 200, 29),
           ),

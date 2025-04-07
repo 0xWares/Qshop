@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:qshop/screens/cart/cart_widget.dart';
+import 'package:qshop/screens/cart/bottom_checkout.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:iconly/iconly.dart';
 
+bool isEmpty = false;
+
 class CartScreen extends StatelessWidget {
   const CartScreen({super.key});
-  final bool isEmpty = false;
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -70,12 +73,22 @@ class CartScreen extends StatelessWidget {
           ),
         )
         : Scaffold(
-          backgroundColor: const Color(0xFF1E201E), // Add background color
+          bottomSheet: Container(
+            decoration: BoxDecoration(
+              color: const Color.fromARGB(255, 66, 66, 66),
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(8),
+                topRight: Radius.circular(8),
+              ),
+            ),
+            child: CartBottomWidget(),
+          ),
+          backgroundColor: const Color(0xFF1E201E),
           appBar: AppBar(
             leading: Image.asset("assets/images/bag/shopping_cart.png"),
             title: Shimmer.fromColors(
               child: const Text(
-                'Cart (5)',
+                'Cart (6)',
                 style: TextStyle(
                   color: Colors.teal,
                   fontWeight: FontWeight.bold,
@@ -97,11 +110,17 @@ class CartScreen extends StatelessWidget {
             ],
             backgroundColor: Colors.transparent,
           ),
-          body: Expanded(
-            child: ListView.builder(
-              itemCount: 10,
-              itemBuilder: (context, index) {},
-            ),
+          body: Column(
+            children: [
+              Expanded(
+                child: ListView.builder(
+                  itemCount: 10,
+                  itemBuilder: (context, index) {
+                    return const CartWidget(); // Return CartWidget instead of Scaffold
+                  },
+                ),
+              ),
+            ],
           ),
         );
   }
