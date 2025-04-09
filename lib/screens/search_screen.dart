@@ -1,7 +1,7 @@
-import 'dart:math';
-
+import 'package:dynamic_height_grid_view/dynamic_height_grid_view.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
+import 'package:qshop/widgets/products/product_widget.dart';
 
 class SearchScreen extends StatefulWidget {
   const SearchScreen({super.key});
@@ -73,10 +73,21 @@ class _SearchScreenState extends State<SearchScreen> {
                         borderRadius: BorderRadius.all(Radius.circular(50)),
                       ),
                     ),
-                    onSubmitted: (value) {
-                      print("the value is $value");
-                      print("the value is $searchController.text");
-                    },
+                  ),
+                ),
+                SizedBox(height: 10),
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 0, left: 5, right: 5),
+                    child: DynamicHeightGridView(
+                      mainAxisSpacing: 12,
+                      crossAxisSpacing: 12,
+                      builder: (context, index) {
+                        return const ProductWidget();
+                      },
+                      itemCount: 200,
+                      crossAxisCount: 2,
+                    ),
                   ),
                 ),
               ],
