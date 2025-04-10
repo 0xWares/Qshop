@@ -6,14 +6,13 @@ class Headingtextwidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(top: 15, bottom: 15, left: 15),
+      padding: const EdgeInsets.only(left: 8, top: 0, bottom: 8),
       child: Text(
-        label,
+        "$label",
         style: TextStyle(
-          fontSize: 20,
+          color: Colors.white,
+          fontSize: 25,
           fontWeight: FontWeight.bold,
-
-          color: const Color.fromARGB(238, 255, 172, 47),
         ),
       ),
     );

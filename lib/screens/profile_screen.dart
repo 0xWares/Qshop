@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:iconly/iconly.dart';
+import 'package:qshop/widgets/headingtextwidget.dart';
+import 'package:qshop/widgets/list_tile_text.dart';
 import 'package:shimmer/shimmer.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -13,6 +15,8 @@ class ProfileScreen extends StatelessWidget {
       appBar: AppBar(
         leading: Image.asset("assets/images/bag/shopping_cart.png"),
         title: Shimmer.fromColors(
+          baseColor: const Color.fromARGB(255, 64, 120, 241),
+          highlightColor: const Color.fromARGB(255, 198, 226, 199),
           child: const Text(
             'Qshop',
             style: TextStyle(
@@ -21,8 +25,6 @@ class ProfileScreen extends StatelessWidget {
               fontSize: 35,
             ),
           ),
-          baseColor: const Color.fromARGB(255, 64, 120, 241),
-          highlightColor: const Color.fromARGB(255, 198, 226, 199),
         ),
         backgroundColor: Colors.transparent,
       ),
@@ -98,20 +100,10 @@ class ProfileScreen extends StatelessWidget {
             SizedBox(height: 2),
             Column(
               children: [
-                const Text(
-                  "General",
-                  style: TextStyle(
-                    color: Colors.white70,
-                    fontSize: 22,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
+                const Headingtextwidget(label: "Genral"),
                 ListTile(
                   onTap: () {},
-                  title: Text(
-                    "All orders",
-                    style: TextStyle(color: Colors.blue, fontSize: 20),
-                  ),
+                  title: ListTileText(label: "All orders"),
                   leading: Icon(
                     IconlyBold.bag,
                     color: const Color.fromARGB(255, 253, 205, 49),
@@ -123,10 +115,7 @@ class ProfileScreen extends StatelessWidget {
                 ),
                 ListTile(
                   onTap: () {},
-                  title: Text(
-                    "Wishlist",
-                    style: TextStyle(color: Colors.blue, fontSize: 20),
-                  ),
+                  title: ListTileText(label: "Wishlist"),
                   leading: Icon(
                     IconlyBold.heart,
                     color: const Color.fromARGB(255, 253, 205, 49),
@@ -138,10 +127,7 @@ class ProfileScreen extends StatelessWidget {
                 ),
                 ListTile(
                   onTap: () {},
-                  title: Text(
-                    "Viewed recently",
-                    style: TextStyle(color: Colors.blue, fontSize: 20),
-                  ),
+                  title: ListTileText(label: "Viewed recently"),
                   leading: Icon(
                     IconlyBold.time_circle,
                     color: const Color.fromARGB(255, 253, 205, 49),
@@ -153,10 +139,7 @@ class ProfileScreen extends StatelessWidget {
                 ),
                 ListTile(
                   onTap: () {},
-                  title: Text(
-                    "Location",
-                    style: TextStyle(color: Colors.blue, fontSize: 20),
-                  ),
+                  title: ListTileText(label: "Location"),
                   leading: Icon(
                     IconlyBold.location,
                     color: const Color.fromARGB(255, 253, 205, 49),
@@ -172,20 +155,10 @@ class ProfileScreen extends StatelessWidget {
             SizedBox(height: 2),
             Column(
               children: [
-                const Text(
-                  "Others",
-                  style: TextStyle(
-                    color: Colors.white70,
-                    fontSize: 22,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
+                const Headingtextwidget(label: "Others"),
                 ListTile(
                   onTap: () {},
-                  title: Text(
-                    "Privacy & Policy",
-                    style: TextStyle(color: Colors.blue, fontSize: 20),
-                  ),
+                  title: ListTileText(label: "Privacy policy"),
                   leading: Icon(
                     IconlyBold.paper,
                     color: const Color.fromARGB(255, 253, 205, 49),

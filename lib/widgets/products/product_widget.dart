@@ -1,6 +1,8 @@
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:iconly/iconly.dart';
 import 'package:flutter/material.dart';
+import 'package:qshop/widgets/product_price_widget.dart';
+import 'package:qshop/widgets/product_details_text.dart';
 import 'package:shimmer/shimmer.dart';
 
 class ProductWidget extends StatefulWidget {
@@ -29,20 +31,14 @@ class _ProductWidgetState extends State<ProductWidget> {
           children: [
             Flexible(
               flex: 5,
-              child: Text(
-                "Hello " * 10,
-                style: TextStyle(
-                  color: Colors.white70,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 18,
-                ),
-                maxLines: 3,
+              child: ProductDetailsText(
+                label: "This is a second product with more text",
               ),
             ),
             Flexible(
               child: IconButton(
                 onPressed: () {},
-                icon: Icon(IconlyBroken.heart),
+                icon: Icon(IconlyBroken.heart, color: Colors.white70),
               ),
             ),
           ],
@@ -53,14 +49,7 @@ class _ProductWidgetState extends State<ProductWidget> {
             Shimmer.fromColors(
               baseColor: const Color.fromARGB(255, 64, 120, 241),
               highlightColor: const Color.fromARGB(255, 198, 226, 199),
-              child: const Text(
-                '100\$',
-                style: TextStyle(
-                  color: Colors.teal,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 25,
-                ),
-              ),
+              child: ProductPrice(price: "50"),
             ),
             Material(
               color: Colors.blueGrey,
