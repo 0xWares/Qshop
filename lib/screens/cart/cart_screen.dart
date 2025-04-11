@@ -116,7 +116,12 @@ class CartScreen extends StatelessWidget {
                 child: ListView.builder(
                   itemCount: 10,
                   itemBuilder: (context, index) {
-                    return const CartWidget(); // Return CartWidget instead of Scaffold
+                    return Column(
+                      children: [
+                        const CartWidget(),
+                        Divider(height: 1, color: Colors.white70),
+                      ],
+                    ); // Return CartWidget instead of Scaffold
                   },
                 ),
               ),

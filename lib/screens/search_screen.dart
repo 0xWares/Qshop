@@ -2,6 +2,7 @@ import 'package:dynamic_height_grid_view/dynamic_height_grid_view.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 import 'package:qshop/widgets/products/product_widget.dart';
+import 'package:shimmer/shimmer.dart';
 
 class SearchScreen extends StatefulWidget {
   const SearchScreen({super.key});
@@ -34,6 +35,22 @@ class _SearchScreenState extends State<SearchScreen> {
       },
       child: Scaffold(
         backgroundColor: const Color(0xFF1E201E),
+        appBar: AppBar(
+          leading: Image.asset("assets/images/bag/shopping_cart.png"),
+          title: Shimmer.fromColors(
+            baseColor: const Color.fromARGB(255, 64, 120, 241),
+            highlightColor: const Color.fromARGB(255, 198, 226, 199),
+            child: const Text(
+              'Search',
+              style: TextStyle(
+                color: Colors.teal,
+                fontWeight: FontWeight.bold,
+                fontSize: 35,
+              ),
+            ),
+          ),
+          backgroundColor: Colors.transparent,
+        ),
         body: Center(
           child: Padding(
             padding: const EdgeInsets.all(8.0),
@@ -41,7 +58,7 @@ class _SearchScreenState extends State<SearchScreen> {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(top: 30.0),
+                  padding: const EdgeInsets.only(top: 0),
                   child: TextField(
                     controller: searchController,
                     decoration: InputDecoration(

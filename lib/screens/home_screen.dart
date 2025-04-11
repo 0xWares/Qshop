@@ -1,8 +1,10 @@
+import 'package:dynamic_height_grid_view/dynamic_height_grid_view.dart';
 import 'package:flutter/material.dart';
 import 'package:qshop/consts/app_consts.dart';
 import 'package:qshop/widgets/headingtextwidget.dart';
 import 'package:qshop/widgets/products/category_rounded_widget.dart';
 import 'package:qshop/widgets/products/latestarrival_widget.dart';
+import 'package:qshop/widgets/products/product_widget.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:card_swiper/card_swiper.dart';
 
@@ -75,6 +77,21 @@ class HomeScreen extends StatelessWidget {
                   name: AppConsts.categoriesList[index].name,
                 );
               }),
+            ),
+            Headingtextwidget(label: "Explore"),
+            Padding(
+              padding: const EdgeInsets.only(top: 0, left: 5, right: 5),
+              child: DynamicHeightGridView(
+                shrinkWrap: true, //
+                physics: NeverScrollableScrollPhysics(),
+                mainAxisSpacing: 12,
+                crossAxisSpacing: 12,
+                builder: (context, index) {
+                  return const ProductWidget();
+                },
+                itemCount: 20,
+                crossAxisCount: 2,
+              ),
             ),
           ],
         ),
