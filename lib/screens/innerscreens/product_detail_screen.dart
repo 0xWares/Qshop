@@ -1,10 +1,10 @@
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
+import 'package:qshop/widgets/headingtextwidget.dart';
 import 'package:qshop/widgets/product_details_text.dart';
 import 'package:qshop/widgets/shimmer_price.dart';
 import 'package:shimmer/shimmer.dart';
-import 'package:qshop/widgets/product_price_widget.dart';
 
 class ProductDetailScreen extends StatefulWidget {
   static const routeName = '/ProductDetailScreen';
@@ -43,33 +43,101 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
         ),
         backgroundColor: Colors.transparent,
       ),
-      body: Column(
-        children: [
-          FancyShimmerImage(
-            imageUrl: 'https://i.ibb.co/8r1Ny2n/20-Nike-Force-1-07.png',
-            height: size.height * 0.27,
-            width: double.infinity,
-          ),
-          Row(
-            children: [
-              Flexible(
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: ProductDetailsText(
-                    label:
-                        "Hi there this is wares, what's up. welcome to the Qshop. feel free to shop anything.",
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            FancyShimmerImage(
+              imageUrl: 'https://i.ibb.co/8r1Ny2n/20-Nike-Force-1-07.png',
+              height: size.height * 0.27,
+              width: double.infinity,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 8, left: 10, bottom: 8),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Flexible(
+                    child: ProductDetailsText(label: "This is Wares" * 10),
                   ),
-                ),
+                  SizedBox(width: 10),
+                  Padding(
+                    padding: const EdgeInsets.only(right: 8),
+                    child: ShimmerPrice(price: "50"),
+                  ),
+                ],
               ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: ShimmerPrice(price: "50"),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(
+                left: 8.0,
+                right: 8.0,
+                bottom: 10.0,
               ),
-            ],
-          ),
+              child: Row(
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
+                      color: Colors.blueAccent,
+                      shape: BoxShape.circle,
+                    ),
 
-          Divider(height: 1, color: Colors.white70),
-        ],
+                    child: IconButton(
+                      onPressed: () {},
+                      icon: Icon(IconlyBroken.heart, color: Colors.white70),
+                    ),
+                  ),
+                  SizedBox(width: 15),
+                  Expanded(
+                    child: SizedBox(
+                      height: kBottomNavigationBarHeight - 10,
+                      child: ElevatedButton.icon(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.redAccent,
+                        ),
+                        icon: Icon(IconlyBroken.bag, color: Colors.white70),
+                        onPressed: () {},
+                        label: Text(
+                          "Add to cart",
+                          style: TextStyle(color: Colors.white70),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+            Divider(height: 1, color: Colors.white70),
+            SizedBox(height: 5),
+            Padding(
+              padding: const EdgeInsets.only(
+                top: 0,
+                left: 0,
+                right: 8,
+                bottom: 5,
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Headingtextwidget(label: "Description"),
+                  Text(
+                    "In phones",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white70,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Text(
+              "This is description" * 500,
+              style: TextStyle(color: Colors.white70),
+            ),
+          ],
+        ),
       ),
     );
   }
