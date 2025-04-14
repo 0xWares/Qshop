@@ -5,6 +5,6 @@ class ListTileText extends StatelessWidget {
   final String label;
   @override
   Widget build(BuildContext context) {
-    return Text("$label", style: TextStyle(color: Colors.blue, fontSize: 20));
+    return Text(label, style: TextStyle(color: Colors.blue, fontSize: 20));
   }
 }

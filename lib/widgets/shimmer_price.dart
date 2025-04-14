@@ -8,9 +8,9 @@ class ShimmerPrice extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Shimmer.fromColors(
-      child: ProductPrice(price: "$price"),
       baseColor: const Color.fromARGB(255, 64, 120, 241),
       highlightColor: const Color.fromARGB(255, 198, 226, 199),
+      child: ProductPrice(price: price),
     );
   }
 }

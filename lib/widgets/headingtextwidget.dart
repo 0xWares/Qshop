@@ -8,7 +8,7 @@ class Headingtextwidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(left: 8, top: 0, bottom: 8),
       child: Text(
-        "$label",
+        label,
         style: TextStyle(
           color: Colors.white,
           fontSize: 25,

@@ -1,7 +1,6 @@
 import 'package:qshop/screens/innerscreens/product_detail_screen.dart';
 import 'package:qshop/widgets/product_price_widget.dart';
 import 'package:qshop/widgets/product_details_text.dart';
-import 'package:shimmer/shimmer.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';

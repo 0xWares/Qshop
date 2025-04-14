@@ -6,8 +6,9 @@ import 'package:iconly/iconly.dart';
 
 bool isEmpty = false;
 
-class CartScreen extends StatelessWidget {
-  const CartScreen({super.key});
+class ViewedRecently extends StatelessWidget {
+  const ViewedRecently({super.key});
+  static const routeName = '/ViewedRecently';
 
   @override
   Widget build(BuildContext context) {
@@ -85,7 +86,12 @@ class CartScreen extends StatelessWidget {
           ),
           backgroundColor: const Color(0xFF1E201E),
           appBar: AppBar(
-            leading: Image.asset("assets/images/bag/shopping_cart.png"),
+            leading: IconButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              icon: Icon(Icons.arrow_back_ios_new, color: Colors.white70),
+            ),
             title: Shimmer.fromColors(
               baseColor: const Color.fromARGB(255, 64, 120, 241),
               highlightColor: const Color.fromARGB(255, 198, 226, 199),

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:iconly/iconly.dart';
+import 'package:qshop/screens/innerscreens/viewed_recently.dart';
+import 'package:qshop/screens/innerscreens/wishlist.dart';
 import 'package:qshop/widgets/headingtextwidget.dart';
 import 'package:qshop/widgets/list_tile_text.dart';
 import 'package:shimmer/shimmer.dart';
@@ -114,7 +116,9 @@ class ProfileScreen extends StatelessWidget {
                   ),
                 ),
                 ListTile(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.pushNamed(context, Wishlist.routeName);
+                  },
                   title: ListTileText(label: "Wishlist"),
                   leading: Icon(
                     IconlyBold.heart,
@@ -126,7 +130,9 @@ class ProfileScreen extends StatelessWidget {
                   ),
                 ),
                 ListTile(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.pushNamed(context, ViewedRecently.routeName);
+                  },
                   title: ListTileText(label: "Viewed recently"),
                   leading: Icon(
                     IconlyBold.time_circle,

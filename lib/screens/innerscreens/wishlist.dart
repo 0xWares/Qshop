@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:qshop/screens/cart/cart_widget.dart';
 import 'package:qshop/screens/cart/bottom_checkout.dart';
+import 'package:qshop/screens/innerscreens/viewed_recently.dart';
+import 'package:qshop/services/asset_manager.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:iconly/iconly.dart';
 
 bool isEmpty = false;
 
-class CartScreen extends StatelessWidget {
-  const CartScreen({super.key});
+class Wishlist extends StatelessWidget {
+  static const routeName = "/Wishlist";
+  const Wishlist({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +23,7 @@ class CartScreen extends StatelessWidget {
               children: [
                 SizedBox(height: 70),
                 Image.asset(
-                  "assets/images/bag/shopping_basket.png",
+                  AssetManager.basket,
                   width: double.infinity,
                   height: size.height * 0.4,
                 ),
@@ -73,24 +76,19 @@ class CartScreen extends StatelessWidget {
           ),
         )
         : Scaffold(
-          bottomSheet: Container(
-            decoration: BoxDecoration(
-              color: const Color.fromARGB(255, 66, 66, 66),
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(8),
-                topRight: Radius.circular(8),
-              ),
-            ),
-            child: CartBottomWidget(),
-          ),
           backgroundColor: const Color(0xFF1E201E),
           appBar: AppBar(
-            leading: Image.asset("assets/images/bag/shopping_cart.png"),
+            leading: IconButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              icon: Icon(Icons.arrow_back_ios_sharp, color: Colors.white70),
+            ),
             title: Shimmer.fromColors(
               baseColor: const Color.fromARGB(255, 64, 120, 241),
               highlightColor: const Color.fromARGB(255, 198, 226, 199),
               child: const Text(
-                'Cart (6)',
+                'Wish List (6)',
                 style: TextStyle(
                   color: Colors.teal,
                   fontWeight: FontWeight.bold,

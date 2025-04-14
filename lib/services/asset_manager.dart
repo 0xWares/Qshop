@@ -31,7 +31,7 @@ class AssetManager {
   static String watch = "${imgPath}categories/watch.png";
 
   // Payment Methods
-  static String addressmap = "${imgPath}/address_map.png";
+  static String addressmap = "$imgPath/address_map.png";
   static String mastercardIcon = "${imgPath}empty_search.png";
   static String paypalIcon = "${imgPath}error.png";
   static String forgotpassword = "${imgPath}forgot_password.png";

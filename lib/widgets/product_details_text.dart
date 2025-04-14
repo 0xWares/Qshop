@@ -6,7 +6,7 @@ class ProductDetailsText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      "$label",
+      label,
       maxLines: 2,
       overflow: TextOverflow.ellipsis,
       style: TextStyle(

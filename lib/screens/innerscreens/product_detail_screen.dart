@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 import 'package:qshop/widgets/headingtextwidget.dart';
 import 'package:qshop/widgets/product_details_text.dart';
+import 'package:qshop/widgets/products/heart_btn.dart';
 import 'package:qshop/widgets/shimmer_price.dart';
 import 'package:shimmer/shimmer.dart';
 
@@ -76,17 +77,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
               ),
               child: Row(
                 children: [
-                  Container(
-                    decoration: BoxDecoration(
-                      color: Colors.blueAccent,
-                      shape: BoxShape.circle,
-                    ),
-
-                    child: IconButton(
-                      onPressed: () {},
-                      icon: Icon(IconlyBroken.heart, color: Colors.white70),
-                    ),
-                  ),
+                  const HeartBtn(bgcolor: Colors.blueAccent, size: 20),
                   SizedBox(width: 15),
                   Expanded(
                     child: SizedBox(

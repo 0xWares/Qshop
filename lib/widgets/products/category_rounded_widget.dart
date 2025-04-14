@@ -14,7 +14,7 @@ class CategoryRoundedWidget extends StatelessWidget {
         Image.asset(img, height: 50, width: 50),
         const SizedBox(height: 5),
         Text(
-          "$name",
+          name,
           maxLines: 2,
           overflow: TextOverflow.ellipsis,
           style: TextStyle(

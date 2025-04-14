@@ -10,7 +10,7 @@ class ProductPrice extends StatelessWidget {
       baseColor: const Color.fromARGB(255, 64, 120, 241),
       highlightColor: const Color.fromARGB(255, 198, 226, 199),
       child: Text(
-        "${price}\$",
+        "$price\$",
         style: TextStyle(
           color: Colors.teal,
           fontWeight: FontWeight.bold,
