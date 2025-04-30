@@ -1,6 +1,7 @@
 import 'package:dynamic_height_grid_view/dynamic_height_grid_view.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
+import 'package:qshop/services/asset_manager.dart';
 import 'package:qshop/widgets/products/product_widget.dart';
 import 'package:shimmer/shimmer.dart';
 
@@ -36,7 +37,7 @@ class _SearchScreenState extends State<SearchScreen> {
       child: Scaffold(
         backgroundColor: const Color(0xFF1E201E),
         appBar: AppBar(
-          leading: Image.asset("assets/images/bag/shopping_cart.png"),
+          leading: Image.asset(AssetManager.cart),
           title: Shimmer.fromColors(
             baseColor: const Color.fromARGB(255, 64, 120, 241),
             highlightColor: const Color.fromARGB(255, 198, 226, 199),
@@ -102,7 +103,7 @@ class _SearchScreenState extends State<SearchScreen> {
                       builder: (context, index) {
                         return const ProductWidget();
                       },
-                      itemCount: 200,
+                      itemCount: 20,
                       crossAxisCount: 2,
                     ),
                   ),

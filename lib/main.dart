@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:qshop/RootScreen.dart';
+import 'package:qshop/screens/auth/login.dart';
 import 'package:qshop/screens/innerscreens/product_detail_screen.dart';
 import 'package:qshop/screens/innerscreens/viewed_recently.dart';
 import 'package:qshop/screens/innerscreens/wishlist.dart';
@@ -23,6 +24,7 @@ class MyApp extends StatelessWidget {
         ProductDetailScreen.routeName: (context) => ProductDetailScreen(),
         Wishlist.routeName: (context) => Wishlist(),
         ViewedRecently.routeName: (context) => ViewedRecently(),
+        Login.routeName: (context) => Login(),
       },
     );
   }

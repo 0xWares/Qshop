@@ -67,6 +67,7 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             Headingtextwidget(label: "Categories"),
+
             GridView.count(
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),

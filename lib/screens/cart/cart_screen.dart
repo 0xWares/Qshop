@@ -4,7 +4,7 @@ import 'package:qshop/screens/cart/bottom_checkout.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:iconly/iconly.dart';
 
-bool isEmpty = false;
+bool isEmpty = true;
 
 class CartScreen extends StatelessWidget {
   const CartScreen({super.key});

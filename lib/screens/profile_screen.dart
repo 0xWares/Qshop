@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 
 import 'package:iconly/iconly.dart';
+import 'package:qshop/screens/auth/login.dart';
 import 'package:qshop/screens/innerscreens/viewed_recently.dart';
 import 'package:qshop/screens/innerscreens/wishlist.dart';
+import 'package:qshop/services/asset_manager.dart';
 import 'package:qshop/widgets/headingtextwidget.dart';
 import 'package:qshop/widgets/list_tile_text.dart';
+import 'package:qshop/widgets/product_details_text.dart';
 import 'package:shimmer/shimmer.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -69,7 +72,7 @@ class ProfileScreen extends StatelessWidget {
                         width: 2,
                       ),
                       image: DecorationImage(
-                        image: AssetImage("assets/images/bag/order_svg.png"),
+                        image: AssetImage(AssetManager.ordersvg),
                         fit: BoxFit.cover,
                       ),
                     ),
@@ -180,7 +183,65 @@ class ProfileScreen extends StatelessWidget {
             SizedBox(height: 2),
             Center(
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  showDialog(
+                    context: context,
+                    builder: (context) {
+                      return AlertDialog(
+                        backgroundColor: Colors.lightBlueAccent,
+                        content: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Image.asset(
+                              AssetManager.warning,
+                              height: 60,
+                              width: 60,
+                            ),
+                            const SizedBox(height: 20),
+                            const ProductDetailsText(
+                              label: "Are you sure you want to logout?",
+                            ),
+                            const SizedBox(height: 20),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                TextButton(
+                                  onPressed: () {
+                                    Navigator.pushNamed(
+                                      context,
+                                      Login.routeName,
+                                    );
+                                  },
+                                  child: const Text(
+                                    "Yes",
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20,
+                                      color: Colors.green,
+                                    ),
+                                  ),
+                                ),
+                                TextButton(
+                                  onPressed: () {
+                                    Navigator.pop(context);
+                                  },
+                                  child: const Text(
+                                    "No",
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20,
+                                      color: Color.fromARGB(255, 247, 125, 125),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      );
+                    },
+                  );
+                },
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
